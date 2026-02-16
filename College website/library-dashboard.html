@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Central Library | Knowledge for Everyone</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --light: #f4f7f6;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Hero & Search */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .search-box {
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: var(--accent);
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Info Grid */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .status-open {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>P.D.N Patil Polytechnic Library</h2>
+        <ul>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">My Account</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Find Your Next Adventure</h1>
+        <p>Access over 500,000 books, digital media, and research archives.</p>
+        <div class="search-box">
+            <input type="text" placeholder="Search by title, author, or ISBN...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section class="card">
+
+                <h3>About Our Library</h3>
+
+                <div class="card">
+                    <h2>Librarian</h2>
+                    <p class="status-open"></p>
+                    <table style="width:100%">
+                        <tr><img height="200" width="200"
+                                src="https://scontent.fnag1-1.fna.fbcdn.net/v/t39.30808-6/516798918_9843503032439779_2925272731351524277_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=hOxPMCDlDk4Q7kNvwEDi3nU&_nc_oc=AdllTxDPprHspq8d9XO4hCh5MAupGb9j0m1p_elcXey-QDBmIdLeRWxfSc9FH8PTfNTT-Gu2SR418i985hv4v-yT&_nc_zt=23&_nc_ht=scontent.fnag1-1.fna&_nc_gid=MM5GOrGEGAIiwzSYcEz3tw&oh=00_AfoIkabzK43dO5ns07hM-jaNPgUxirdl3hew8p2FbVl9uQ&oe=69785FD3"
+                                alt="">
+                            <td><b>Dhiraj Raut</b></td>
+                            <b>co-ordinator</b>
+                            <td><img height="200" width="200" src="https://scontent.fnag1-7.fna.fbcdn.net/v/t1.6435-9/65494971_416139395661676_6221866693602312192_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=vw6Ob6-Sf5oQ7kNvwHMEWBK&_nc_oc=AdnKZkDUFTeQOZrzju987B95UTX5J5L6CI6UqfIXpPzYYX8ljSTLifuHn7cqGYkmIGGlQSvFaay9PiNBRymzjfVb&_nc_zt=23&_nc_ht=scontent.fnag1-7.fna&_nc_gid=BjTIR2GHaLsmKVzXOX6zXA&oh=00_AfoTus-wdkrFCSctyqFGVJjZF-yR33WxQ5955n1ulnO5qQ&oe=6999F0A1" alt=""></td>
+                        </tr>
+                        <tr>
+                            <td>A library is a curated collection of books, media, and digital resources,
+                                organized for public or specific group access, serving as a community hub for learning,
+                                research, and recreation by offering free access to information, quiet study spaces,
+                                internet, and programs, bridging past knowledge with future generations. Libraries
+                                preserve culture, foster literacy, and support lifelong learning through physical and
+                                virtual materials like books, e-books, films, and databases, managed by trained
+                                librarians. </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sunday:</td>
+                            <td>Closed</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>Founded in 1954, the City Central Library serves as a hub for lifelong learning and community
+                    engagement. We offer free Wi-Fi, quiet study zones, and a state-of-the-art makerspace.</p>
+            </section>
+
+            <section class="card">
+
+                <h3>Latest News & Events</h3>
+                <ul>
+                    <li><strong>Children's Storytime:</strong> Every Tuesday at 10:00 AM</li>
+                    <li><strong>Tech Workshop:</strong> Intro to Python (Jan 30th)</li>
+                    <li><strong>Book Club:</strong> Discussion on "The Great Gatsby" (Feb 5th)</li>
+                </ul>
+            </section>
+             <section class="card">
+
+                <h3>Latest News & Events</h3>
+                <ul>
+                    <li><strong>Children's Storytime:</strong> Every Tuesday at 10:00 AM</li>
+                    <li><strong>Tech Workshop:</strong> Intro to Python (Jan 30th)</li>
+                    <li><strong>Book Club:</strong> Discussion on "The Great Gatsby" (Feb 5th)</li>
+                </ul>
+            </section>
+             <section class="card">
+
+                <h3>Latest News & Events</h3>
+                <ul>
+                    <li><strong>Children's Storytime:</strong> Every Tuesday at 10:00 AM</li>
+                    <li><strong>Tech Workshop:</strong> Intro to Python (Jan 30th)</li>
+                    <li><strong>Book Club:</strong> Discussion on "The Great Gatsby" (Feb 5th)</li>
+                </ul>
+            </section>
+             <section class="card">
+
+                <h3>Latest News & Events</h3>
+                <ul>
+                    <li><strong>Children's Storytime:</strong> Every Tuesday at 10:00 AM</li>
+                    <li><strong>Tech Workshop:</strong> Intro to Python (Jan 30th)</li>
+                    <li><strong>Book Club:</strong> Discussion on "The Great Gatsby" (Feb 5th)</li>
+                </ul>
+            </section>
+        </main>
+
+        <aside>
+            <div class="card">
+                <h3>Opening Hours</h3>
+                <p class="status-open">● Currently Open</p>
+                <table style="width:100%">
+                    <tr>
+                        <td>Mon - Fri:</td>
+                        <td>9am - 8pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday:</td>
+                        <td>10am - 6pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday:</td>
+                        <td>Closed</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Contact Us</h3>
+                <p>📍 123 Library Lane, Downtown</p>
+                <p>📞 (555) 123-4567</p>
+                <p>📧 help@citylibrary.org</p>
+                <p>Library Feedback link</p>
+            </div>
+        </aside>
+         <aside>
+            <div class="card">
+                <h3>Opening Hours</h3>
+                <p class="status-open">● Currently Open</p>
+                <table style="width:100%">
+                    <tr>
+                        <td>Mon - Fri:</td>
+                        <td>9am - 8pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday:</td>
+                        <td>10am - 6pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday:</td>
+                        <td>Closed</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3>Contact Us</h3>
+                <p>📍 123 Library Lane, Downtown</p>
+                <p>📞 (555) 123-4567</p>
+                <p>📧 help@citylibrary.org</p>
+                <p>Library Feedback link</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 City Central Library. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

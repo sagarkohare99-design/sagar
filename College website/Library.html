@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.D.N. Patil Polytechnic Library</title>
+    <style>
+        /* CSS Styling */
+        :root {
+            --primary: #1a3c5e;
+            --secondary: #2c7da0;
+            --accent: #ffd700;
+            --light: #f4f7f6;
+            --dark: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 60, 94, 0.8), rgba(26, 60, 94, 0.8)), 
+                        url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .search-container {
+            margin-top: 25px;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            width: 300px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-btn {
+            padding: 12px 25px;
+            background: var(--accent);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Main Content Layout */
+        .main-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+            padding: 40px 5%;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        /* Stats/Links Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .service-item {
+            background: var(--secondary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            background: var(--primary);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container { grid-template-columns: 1fr; }
+            header { flex-direction: column; }
+            nav { margin-top: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2 style="margin:0;">P.D.N. Patil Polytechnic Library</h2>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">E-Resources</a>
+        <a href="#">Journals</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Knowledge is Power</h1>
+    <p>Access thousands of engineering books, journals, and research papers.</p>
+    <div class="search-container">
+        <input type="text" id="bookSearch" placeholder="Search by title, author, or ISBN...">
+        <button class="search-btn" onclick="searchAlert()">Search</button>
+    </div>
+</section>
+
+<div class="main-container">
+    <main>
+        <div class="card">
+            <h3>Library Services</h3>
+            <div class="services-grid">
+                <div class="service-item">Digital Library</div>
+                <div class="service-item">Exam Papers</div>
+                <div class="service-item">Book Bank</div>
+                <div class="service-item">New Arrivals</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Latest Announcements</h3>
+            <ul>
+                <li>Library hours extended until 8:00 PM for final exams.</li>
+                <li>New collection of AI and Robotics books available now.</li>
+                <li>Renew your memberships by the end of this month.</li>
+            </ul>
+        </div>
+    </main>
+
+    <aside>
+        <div class="card">
+            <h3>Quick Stats</h3>
+            <p><strong>Total Books:</strong> 15,000+</p>
+            <p><strong>Journals:</strong> 50+</p>
+            <p><strong>E-Books:</strong> 2,000+</p>
+        </div>
+        <div class="card">
+            <h3>Library Timings</h3>
+            <p>Mon - Sat: 9:00 AM - 5:00 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <p>&copy; 2026 P.D.N. Patil Polytechnic. All rights reserved.</p>
+</footer>
+
+<script>
+    // Simple JavaScript for search interaction
+    function searchAlert() {
+        const query = document.getElementById('bookSearch').value;
+        if(query) {
+            alert("Searching for: " + query + "\n(In a real app, this would fetch data from a database)");
+        } else {
+            alert("Please enter a book name.");
+        }
+    }
+</script>
+
+</body>
+</html>

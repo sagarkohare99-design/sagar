@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Initial state - hidden */
+.dropdown-content {
+  display: none;
+}
+
+/* This class will be added by JavaScript */
+.show {
+  display: block;
+}
+
+
+/* Container for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* The button that triggers the dropdown */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The dropdown menu - hidden by default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover for dropdown links */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu when the user hovers over the dropdown container */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+<body>
+    <div class="dropdown">
+  <button class="dropbtn">Hover Over Me</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const dropdownBtn = document.querySelector('.dropbtn');
+  const dropdownContent = document.getElementById('myDropdown');
+
+  dropdownBtn.addEventListener('mouseover', function() {
+    dropdownContent.classList.add('show');
+  });
+
+  dropdownBtn.addEventListener('mouseout', function() {
+    dropdownContent.classList.remove('show');
+  });
+});
+</script>
+</body>
+</html>

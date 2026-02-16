@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Library Portal | P.D.N. Patil Polytechnic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --brand-dark: #0f172a;
+            --brand-blue: #2563eb;
+            --brand-accent: #fbbf24;
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        * { box-sizing: border-box; transition: all 0.2s ease; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg-light); color: var(--text-main); }
+
+        /* Top Navigation */
+        header {
+            background: var(--brand-dark);
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .nav-links a { color: #cbd5e1; text-decoration: none; margin-left: 25px; font-weight: 500; }
+        .nav-links a:hover { color: var(--brand-accent); }
+
+        /* Hero Dashboard */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .search-box {
+            background: var(--glass);
+            padding: 8px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 700px;
+            margin-top: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        .search-box button {
+            background: var(--brand-dark);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Dashboard Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr 300px;
+            gap: 30px;
+            padding: 40px 5%;
+        }
+
+        .panel { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h3 { border-left: 4px solid var(--brand-blue); padding-left: 10px; margin-top: 0; }
+
+        /* Sidebar Lists */
+        .menu-list { list-style: none; padding: 0; }
+        .menu-list li { padding: 12px 0; border-bottom: 1px solid #f1f5f9; cursor: pointer; }
+        .menu-list li:hover { color: var(--brand-blue); padding-left: 5px; }
+        .menu-list i { margin-right: 10px; color: var(--brand-blue); width: 20px; }
+
+        /* Resource Cards */
+        .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .res-card {
+            background: #eff6ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #dbeafe;
+        }
+        .res-card:hover { border-color: var(--brand-blue); background: white; }
+
+        /* Footer */
+        footer { background: var(--brand-dark); color: #94a3b8; text-align: center; padding: 40px; margin-top: 50px; }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        main { animation: fadeIn 0.5s ease-out; }
+
+        @media (max-width: 1100px) { .container { grid-template-columns: 1fr; } .side-panel { display: none; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2 style="margin:0;"><i class="fas fa-microchip"></i> P.D.N. Patil Polytechnic Library</h2>
+    </div>
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#catalog">E-Catalog</a>
+        <a href="#digital">Digital Repository</a>
+        <a href="#account" style="background:var(--brand-blue); padding: 8px 18px; border-radius: 5px; color:white;">Login</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Advanced Information & Knowledge Center</h1>
+    <p>Empowering the Innovators of Tomorrow with 16,000+ Engineering Titles</p>
+    <div class="search-box">
+        <input type="text" id="opacSearch" placeholder="Search Books, Journals, or MSBTE Papers...">
+        <button onclick="runSearch()"><i class="fas fa-search"></i> Search</button>
+    </div>
+</section>
+
+<div class="container">
+    <aside class="panel">
+        <h3>Quick Access</h3>
+        <ul class="menu-list">
+            <li><i class="fas fa-book-open"></i> Book Bank Scheme</li>
+            <li><i class="fas fa-file-pdf"></i> MSBTE Exam Papers</li>
+            <li><i class="fas fa-graduation-cap"></i> Project Reports</li>
+            <li><i class="fas fa-newspaper"></i> Technical Journals</li>
+            <li><i class="fas fa-video"></i> NPTEL Video Library</li>
+            <li><i class="fas fa-wifi"></i> Digital Library Access</li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="panel">
+            <h3>Departmental Collections</h3>
+            <div class="res-grid">
+                <div class="res-card">
+                    <i class="fas fa-cog fa-2x" style="color:#2563eb"></i>
+                    <h4>Mechanical</h4>
+                    <p>Thermodynamics, CAD/CAM, Automobile Engineering</p>
+                </div>
+                <div class="res-card">
+                    <i class="fas fa-laptop-code fa-2x" style="color:#2563eb"></i>
+                    <h4>Computer/IT</h4>
+                    <p>Java, Python, Networking, Cybersecurity</p>
+                </div>
+                <div class="res-card">
+                    <i class="fas fa-bolt fa-2x" style="color:#2563eb"></i>
+                    <h4>Electrical/Entc</h4>
+                    <p>Power Systems, Microcontrollers, VLSI</p>
+                </div>
+                <div class="res-card">
+                    <i class="fas fa-building fa-2x" style="color:#2563eb"></i>
+                    <h4>Civil</h4>
+                    <p>Surveying, Concrete Tech, Structural Design</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" style="margin-top:20px;">
+            <h3>E-Resources Hub</h3>
+            <p>Access IEEE, ScienceDirect, and DelNet subscriptions from within the campus network.</p>
+            <button style="background:var(--brand-blue); color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">Enter E-Library Portal</button>
+        </div>
+    </main>
+
+    <aside class="side-panel">
+        <div class="panel">
+            <h3>Library Stats</h3>
+            <div style="text-align:center;">
+                <div style="font-size: 2rem; font-weight:700; color:var(--brand-blue);">16,519+</div>
+                <p>Total Volumes</p>
+                <hr>
+                <div style="font-size: 2rem; font-weight:700; color:var(--brand-blue);">7,023</div>
+                <p>Unique Titles</p>
+            </div>
+        </div>
+        
+        <div class="panel" style="margin-top:20px; background: #fffbeb; border: 1px solid #fef3c7;">
+            <h3>Notice Board</h3>
+            <small>22 Jan 2026</small>
+            <p>New arrivals in <b>Robotics & AI</b> section are now ready for issue.</p>
+            <hr>
+            <p>Book Bank registration for Semester 2 is open.</p>
+        </div>
+    </aside>
+</div>
+
+<footer>
+    <p><b>P.D.N. Patil Institute of Polytechnic</b><br>
+    Talegaon (S.P.), Arvi Road, Wardha - 442204</p>
+    <p>&copy; 2026 Library Management System | <i class="fas fa-envelope"></i> library@pdnpatil.edu.in</p>
+</footer>
+
+<script>
+    function runSearch() {
+        const query = document.getElementById('opacSearch').value;
+        if(query.trim() === "") {
+            alert("Please enter a keyword to search the catalog.");
+        } else {
+            alert("Redirecting to OPAC System...\nSearching for: " + query);
+            // In real system, window.location.href = "/search?q=" + query;
+        }
+    }
+</script>
+
+</body>
+</html>

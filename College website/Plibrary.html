@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Login | PDN Polytechnic</title>
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --accent-gold: #FFD700;
+            --bg-color: #eef2f3;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #003366 0%, #001a33 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            text-align: center;
+        }
+
+        .lib-icon {
+            font-size: 50px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            color: var(--primary-blue);
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--primary-blue);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary-blue);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #004080;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        .footer-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .error-msg {
+            color: #d9534f;
+            font-size: 13px;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <div class="lib-icon">📚</div>
+    <h2>Library Portal</h2>
+    <p>P.D.N. Patil Polytechnic</p>
+
+    <div id="error" class="error-msg">Invalid User ID or Password</div>
+
+    <form id="loginForm">
+        <div class="input-group">
+            <label for="userId">USER ID / ENROLLMENT NO.</label>
+            <input type="text" id="userId" placeholder="Enter your ID" required>
+        </div>
+        <div class="input-group">
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="login-btn">SIGN IN</button>
+    </form>
+
+    <div class="footer-links">
+        <a href="#">Forgot Password?</a> | <a href="#">Student Help</a>
+    </div>
+</div>
+
+<script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('error');
+
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const userId = document.getElementById('userId').value;
+        const pass = document.getElementById('password').value;
+
+        // Basic logic for demonstration
+        if (userId === "admin" && pass === "1234") {
+            alert("Welcome to the PDN Library System!");
+             window.location.href = "home.html"; 
+        } else {
+            errorMsg.style.display = "block";
+            // Simple shake effect
+            document.querySelector('.login-card').animate([
+                { transform: 'translateX(0)' },
+                { transform: 'translateX(-10px)' },
+                { transform: 'translateX(10px)' },
+                { transform: 'translateX(0)' }
+            ], { duration: 200 });
+        }
+    });
+</script>
+
+</body>
+</html>
